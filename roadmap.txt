@@ -1,0 +1,4 @@
+Faire des breakpoints a 20 (fleurs donjons), 40 (elite) et 60 résines = OK
+Avoir une heure réelle = OK
+
+Proposer au bot de ping quand on aura atteint un cap mentionné (cf breakpoint)

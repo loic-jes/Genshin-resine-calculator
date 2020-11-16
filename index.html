@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résine calculator</title>
+
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="libs/icofont/icofont.css">
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+
+<body>
+    
+    
+
+<h1>Calculateur de résine</h1>
+
+
+
+<p class = "mt-5"><label>Votre stock actuel de résine<input class = "ml-3" type="text" name="param1" placeholder="format : xx/160"></label>
+<input type="submit" name="valider" value="Valider" id="validate"></p>
+
+
+<p><h5 id="requestedTime"></h5></p>
+<p><h5 id="estimatedTime"></h5></p>
+
+
+<div class="d-inline">Prochain donjon / fleur (20 résine) : <h6 id="bp20" class="d-inline"></h6></div><br>
+<div class="d-inline">Prochain elite (40 résine) : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <h6 id="bp40" class="d-inline"></h6></div><br>
+<div class="d-inline">Prochain world boss (60 résine) : <h6 id="bp60" class="d-inline"></h6></div><br>
+
+<div class="d-flex">
+<img src="img/gunnhildr.png" class = "mt-5" alt="">
+<h4 class = "mt-5">Vive Meren</h4>
+</div>
+
+    
+
+    <script src="libs/jquery-3.5.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>
