@@ -105,7 +105,8 @@ document.querySelector('[name=valider]').addEventListener("click", function(even
     event.preventDefault();
     passResin();
     missingResinToTime(resinNeeded);
-    calculBreakPoints()
+    calculBreakPoints();
+    internalTimer()
 
 
 });;
@@ -213,4 +214,30 @@ function getPartialReloadRealTime(resin, breakpoint) {
     return (getFullReloadRealTime(amountHourNeededTimeCalcualtion,amountMinuteNeededTimeCalcualtion));
     
 }
+
+
+function internalTimer() {
+
+    let internalTimer = setInterval(()=> {
+
+        if (actualResin >= 160) {
+            console.log("Full résine !");
+            clearInterval(internalTimer)
+        } else {    
+            actualResin++;
+        }
+
+        console.log(actualResin);
+
+        $('[name=param1]').val(actualResin+"/160");
+        passResin();
+        missingResinToTime(resinNeeded);
+        calculBreakPoints();
+   
+
+
+    }, 480000) // 8 mins = 480000ms
+}
+
+
 
