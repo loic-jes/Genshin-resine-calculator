@@ -6,6 +6,7 @@ let realTimeDate;
 let realTimehours;
 let realTimeminutes;
 let realTimedays;
+let intervalHandler;
 
 
 $(document).ready (function() {
@@ -106,7 +107,8 @@ document.querySelector('[name=valider]').addEventListener("click", function(even
     passResin();
     missingResinToTime(resinNeeded);
     calculBreakPoints();
-    internalTimer()
+    clearInterval(intervalHandler);
+    intervalHandler = internalTimer();
 
 
 });;
@@ -237,6 +239,8 @@ function internalTimer() {
 
 
     }, 480000) // 8 mins = 480000ms
+
+    return internalTimer;
 }
 
 
