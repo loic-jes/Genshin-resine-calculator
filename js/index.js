@@ -7,23 +7,32 @@ let realTimehours;
 let realTimeminutes;
 let realTimedays;
 let intervalHandler;
+let unitNames = {
+    r:"Génération de Résine",
+    t:"Temps (en minutes)"
+} 
 
 
 $(document).ready (function() {
     // missingResinToTime()       // N'est plus nécessaire maintenant que j'ai codé un bouton pour le faire
+
+    $('#textBox1').keydown((e) => {
+        if (e.keyCode ==13) {
+            $('#validate').click();
+        }
+    })
+
 })
 
 /**
- * Vérifie qu'on a bien tapé un chiffre au bon format : xxx/160
+ * Vérifie qu'on a bien tapé un chiffre au bon format : 0 <= x < 160
  * @param {String} input Nombre
  */
 function isValidImput(input) { 
 
-    let test = input.match(/^[0-9]+\/160/g);
+    if (!isNaN(input)) {
 
-    if (test == input) {
-
-        resinNeeded = input.split('/')[0]; // récupère le chiffre avant le /
+        resinNeeded = input
     
         if (resinNeeded > 160 || resinNeeded < 0) {      // Si chiffre négatif (ne devrait pas pouvoir arriver avec le reGex) ou si chiffre supérieur au max de résine, stoppe la
             return false;
@@ -36,6 +45,7 @@ function isValidImput(input) {
         return false;
     }     
 }
+
 
 /**
  * Calcule le nombre de résine manquant (total possible - nombre de résine passé en argument), 
@@ -54,8 +64,9 @@ function missingResinToTime(input) {
 
     } else {
 
-        alert("Nombre invalide. Veuillez respecter le format 'xx/160' ");
-        missingResinToTime();
+        alert("Nombre invalide. La résine doit être comprise entre 0 et 160");
+        document.querySelector('[name=param1]').value = "";
+        // missingResinToTime();
 
     }
 }
@@ -243,5 +254,50 @@ function internalTimer() {
     return internalTimer;
 }
 
+
+// REAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACT
+
+
+function toResin(value){
+    return Math.floor(value / 8);
+}
+
+function toTime(value) {
+    return value *8;
+}
+
+function tryConvert(value, convert) {
+    const input = parseFloat(value);
+    if (Number.isNaN(input)) {
+        return "";
+    }
+
+    const output = convert(input);
+    const rounded = Math.round(output * 1000) / 1000;
+    return rounded.toString();
+}
+
+function FastConvertorTimeTranslation(props) {
+    if (props.time >= 60) {
+
+        let hours =0;
+        let minutes = props.time;
+
+        if (minutes > 1280) {
+           return <p>Ca fait longtemps la dis donc</p>;
+        }
+
+        while (minutes >= 60) {
+            hours++;
+            minutes -= 60;
+        };      
+
+        return (<p>{hours} heures, {minutes} minutes</p>)
+     
+
+    } else {return null}
+}
+
+ReactDOM.render( <FastConvertor /> ,document.getElementById("react12"));
 
 
