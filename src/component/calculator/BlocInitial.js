@@ -7,16 +7,17 @@ class BlocInitial extends Component {
     constructor(props) {
         super(props);
         this.handleInputChange = this.handleInputChange.bind(this);
-        this.state = { value: "" };
 
     }
 
-    handleInputChange(value) {
-        this.props.onValueChange(value);
+    handleInputChange(value) { // TODO remonter encore d'un cran
+        // this.props.onValueChange(value);
+        console.log("Initial change " + value );
+        this.props.onChange(value);
     }
 
     render() {
-        const value = this.state.value;
+        const value = this.props.value;
 
         return (
 

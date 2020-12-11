@@ -5,7 +5,6 @@ class BlocInitialInput extends Component {
 
     constructor(props){
         super(props);
-        this.state = {value : ""};
         this.handleChange = this.handleChange.bind(this);
 
     }
@@ -13,6 +12,7 @@ class BlocInitialInput extends Component {
 
     handleChange(e) {
         this.props.onValueChange(e.target.value);
+        console.log("Input : " + e.target.value)
 
     }
     render() {

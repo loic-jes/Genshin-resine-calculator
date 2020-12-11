@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {BlocInitial} from "../index"
 
+// Représente la page entière
+
 class ResinCalculator extends Component {
 
     constructor(props) {
@@ -14,7 +16,7 @@ class ResinCalculator extends Component {
             realTimehours : 0,
             realTimeminutes : 0,
             realTimedays: 0,
-            blockInitialValue : "",
+            blockInitialValue : 0,
             intervalHandler : 0,
             unitNames : {
                 r: "Génération de Résine",
@@ -74,11 +76,11 @@ class ResinCalculator extends Component {
 
     render() {
 
-        const blockInitialValue = this.props.blockInitialValue;
+        const blockInitialValue = this.state.blockInitialValue;
 
         return (
             <main>
-                <BlocInitial value = {blockInitialValue} onValueChange={this.blockInitialValueChange} />
+                <BlocInitial value = {blockInitialValue} onChange={this.blockInitialValueChange} />
             </main>
         );
     }
