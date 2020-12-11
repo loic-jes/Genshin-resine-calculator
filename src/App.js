@@ -1,12 +1,12 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BlocInitial } from './component';
+import { ResinCalculator } from './component';
 
 function App() {
   return (
 
     <div className="App">
-    <BlocInitial />
+    <ResinCalculator />
     </div>
 
 
