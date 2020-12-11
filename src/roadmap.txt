@@ -24,3 +24,16 @@ TODO lolz2 : Si j'suis chaud, créer des comptes utilisateurs, lier le site a la
 TODO : Les cards de maj
 
 TODO : Un mode anglais / fr a faire avec le context (et un context.provider) react et des if pour les return des components
+
+
+
+
+
+
+npm install react-bootstrap bootstrap
+npm install react-router-dom
+npm install formik --save
+npm install -S yup
+
+
+jquery ?
