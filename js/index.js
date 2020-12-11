@@ -242,7 +242,7 @@ function internalTimer() {
 
         console.log(actualResin);
 
-        $('[name=param1]').val(actualResin+"/160");
+        $('[name=param1]').val(actualResin);
         passResin();
         missingResinToTime(resinNeeded);
         calculBreakPoints();
