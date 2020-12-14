@@ -40,7 +40,9 @@ class ResinCalculator extends Component {
     handleInputChange(value) { // TODO remonter encore d'un cran
     // this.props.onValueChange(value);
     console.log("Final change " + value );
-    this.setState({value})
+
+    this.setState({blockInitialValue : value})
+    console.log(this.state)
 }
 
 

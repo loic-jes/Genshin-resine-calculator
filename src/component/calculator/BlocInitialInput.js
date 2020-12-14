@@ -21,7 +21,7 @@ class BlocInitialInput extends Component {
         return (
             <fieldset>
                 <label> Votre stock actuel de résine (sur /160) &nbsp; </label>
-                <input value={value} onChange={this.handleChange} type="text"/>
+                <input value={value} onChange={this.handleChange} type="password"/>
                 {/* <input type="submit" name="valider" value="Valider" id="validate" /> */}
             </fieldset>
         );
