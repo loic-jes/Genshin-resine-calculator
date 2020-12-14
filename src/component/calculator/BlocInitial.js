@@ -13,7 +13,7 @@ class BlocInitial extends Component {
     handleInputChange(value) { // TODO remonter encore d'un cran
         // this.props.onValueChange(value);
         console.log("Initial change " + value );
-        this.props.onChange(value);
+        this.props.onValueChange(value);
     }
 
     render() {

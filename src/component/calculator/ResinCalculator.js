@@ -32,9 +32,16 @@ class ResinCalculator extends Component {
         this.realTimeHoursChange = this.realTimeHoursChange.bind(this);
         this.realTimeminutesChange = this.realTimeminutesChange.bind(this);
         this.realTimedaysChange = this.realTimedaysChange.bind(this);
-        this.blockInitialValueChange = this.blockInitialValueChange(this);
+        this.blockInitialValueChange = this.blockInitialValueChange.bind(this);
+        this.handleInputChange = this.handleInputChange.bind(this)
 
     }
+
+    handleInputChange(value) { // TODO remonter encore d'un cran
+    // this.props.onValueChange(value);
+    console.log("Final change " + value );
+    this.setState({value})
+}
 
 
 
@@ -80,7 +87,7 @@ class ResinCalculator extends Component {
 
         return (
             <main>
-                <BlocInitial value = {blockInitialValue} onChange={this.blockInitialValueChange} />
+                <BlocInitial value = {blockInitialValue} onValueChange={this.handleInputChange} />
             </main>
         );
     }
