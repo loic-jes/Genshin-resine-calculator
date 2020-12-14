@@ -20,6 +20,9 @@ class ContextProvider extends React.Component {
     }
 
 
+    //    setResinValue = (input, key) => {
+    //     this.setState((prevState) => ({ resin[key]: input }))
+    // }
        setResinValue = (input) => {
         this.setState((prevState) => ({ resin:{
             value : input,
