@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
 import {amountOfHours, amountOfTime} from "./Calculator"
-import {ResinCalculatorContext} from './ResinCalculatorContext'
-
 
 class BlocInitialOutput extends Component {
-
-    static contextType = ResinCalculatorContext;
-
 
 
 

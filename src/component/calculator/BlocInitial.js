@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
 import { BlocInitialInput, BlocInitialOutput } from '../index';
-import {ResinCalculatorContext} from './ResinCalculatorContext'
-
 
 
 class BlocInitial extends Component {
 
-    static contextType = ResinCalculatorContext;
+    constructor(props) {
+        super(props);
+        this.handleInputChange = this.handleInputChange.bind(this);
 
+    }
+
+    handleInputChange(value) { // TODO remonter encore d'un cran
+        // this.props.onValueChange(value);
+        console.log("Initial change " + value );
+        this.props.onValueChange(value);
+    }
 
     render() {
         const value = this.props.value;
