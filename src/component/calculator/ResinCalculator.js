@@ -16,7 +16,7 @@ class ResinCalculator extends Component {
             realTimehours : 0,
             realTimeminutes : 0,
             realTimedays: 0,
-            blockInitialValue : 0,
+            blockInitialValue : "",
             intervalHandler : 0,
             unitNames : {
                 r: "Génération de Résine",
