@@ -173,7 +173,7 @@ class ContextProvider extends React.Component {
     render() {
         const { children } = this.props;
         const { resin } = this.state;
-        const { setResinValue, setResin } = this;
+        const { setResin } = this;
 
         return (
             <Context.Provider value={{ resin, setResin }}>

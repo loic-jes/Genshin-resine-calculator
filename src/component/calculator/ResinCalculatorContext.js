@@ -1,26 +1,45 @@
 import React from 'react'
 
-const ResinCalculatorContext = React.createContext()
+const ResinContext = React.createContext()
 
-class ResinCalculatorProvider extends React.Component {
+class ResinContextProvider extends React.Component {
 
-    state = {
-        resin: {
-            resinneeded: 0, 
-            actualResin : 0,
-            amountOfTime : 0,
-            amountOfHours : 0,
-            realTimeDate : 0,
-            realTimehours : 0,
-            realTimeminutes : 0,
-            realTimedays: 0,
-            blockInitialValue : 0
-        },
+
+    constructor(props) {
+        super(props);
+        
+
+        this.state = {
+            resin: {
+                value : "Trololo",
+                resinNeeded: 0, 
+                actualResin : 120,
+                amountOfTime : 0,
+                amountOfHours : 0,
+                realTimeDate : 0,
+                realTimehours : 0,
+                realTimeminutes : 0,
+                realTimedays: 0,
+                blockInitialValue : 0
+            },
+        }
+
+        this.setResin = this.setResin.bind(this)
+    }
+    
+
+    setResin(name, value){
+
+        let resinChange = {...this.state.resin};
+        resinChange[name] = value;
+        console.log(resinChange)
+
+        this.setState({resin:resinChange})
+        console.log(this.state.resin);
+
     }
 
-    setResin = (resin) => {
-        this.setState((prevState) => ({ resin }))
-    }
+
 
     render() {
         const { children } = this.props;
@@ -28,10 +47,10 @@ class ResinCalculatorProvider extends React.Component {
         const { setResin } = this;
 
         return (
-            <ResinCalculatorContext.Provider value={{ resin, setResin }}>
+            <ResinContext.Provider value={{ resin, setResin }}>
                 {children}
 
-            </ResinCalculatorContext.Provider>
+            </ResinContext.Provider>
         )
 
     }
@@ -39,7 +58,7 @@ class ResinCalculatorProvider extends React.Component {
 }
 
 
-export { ResinCalculatorContext }
-export { ResinCalculatorProvider }
+export { ResinContext }
+export { ResinContextProvider }
 
 
