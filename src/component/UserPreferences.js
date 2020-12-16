@@ -11,21 +11,9 @@ class UserPreferencesProvider extends Component {
         this.setLangage = this.setLangage.bind(this)
     }
 
-    setLangage(input) {
-        // let langageChange = {...this.state}
-        // langageChange.langue = input;
-
+    setLangage(input) {        
         this.setState({langue:input})
-        // console.log(input)
     }
-
-
-
-
-    
-
-
-
 
     render() {
 
@@ -49,7 +37,7 @@ export {UserPreferences};
 export {UserPreferencesProvider};
 
 
-
+// Pour utiliser mon context ------------------------
 // import {UserPreferences} from '../UserPreferences'
 // static contextType = UserPreferences;
 // const {preferences} = this.context
