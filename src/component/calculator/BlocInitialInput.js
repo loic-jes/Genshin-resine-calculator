@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import { Formik, Form, Field, ErrorMessage } from "formik";
 // import * as Yup from 'yup';
+import {UserPreferences} from '../UserPreferences'
 
 
 class BlocInitialInput extends Component {
@@ -11,6 +12,9 @@ class BlocInitialInput extends Component {
         this.state = {intervalHandler:""}
 
     }
+
+    static contextType = UserPreferences;
+
 
 /**
  * Vérifie qu'on a bien tapé un chiffre au bon format : 0 <= x < 160, puis met à jour le state de la page ResinCalculator
@@ -55,6 +59,7 @@ class BlocInitialInput extends Component {
     
     render() {
         const value = this.props.value;
+        const {preferences} = this.context
 
 
 
@@ -104,9 +109,9 @@ class BlocInitialInput extends Component {
 
 
             <fieldset>
-                <label> Votre stock actuel de résine (sur /160) &nbsp; </label>
+            {preferences === "Français" ? <label>Votre stock actuel de résine (sur /160)&nbsp; </label> : <label>Your current resin stock (xx/160)&nbsp; </label>}
                 <input value={value} onChange={this.handleChange} type="number"/>
-                <input type="submit" name="valider" value="Valider" id="validate" />
+                {/* <input type="submit" name="valider" value="Valider" id="validate" /> */}
             </fieldset>
 
             </>

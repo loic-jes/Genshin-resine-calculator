@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {UserPreferences} from '../UserPreferences'
 
 class BlocInitialOutput extends Component {
 
@@ -26,7 +27,7 @@ class BlocInitialOutput extends Component {
         
     }
     
-
+    static contextType = UserPreferences;
 
 
     missingResinToTime() {
@@ -34,6 +35,7 @@ class BlocInitialOutput extends Component {
         let resinNeeded = 160-this.props.value;
         let amountOfTime = resinNeeded*8;
         let amountOfHours = 0;
+        const {preferences} = this.context
 
         while(amountOfTime >= 60) {
             amountOfTime -= 60;
@@ -70,11 +72,13 @@ class BlocInitialOutput extends Component {
 
     renderPartUn(hours, minutes) {
 
-        console.log(`renderPartDeux = ${hours} heures et ${minutes} minutes`)
+        const {preferences} = this.context
 
         return (
             <>
-            <h5> Il vous faudra {hours} heures et {minutes} minutes pour atteindre les 160 résines. </h5>
+            {preferences === "Français" ? 
+            <h5> Il vous faudra {hours} heures et {minutes} minutes pour atteindre les 160 résines. </h5> :
+            <h5> You'll need {hours} hours and {minutes} minutes to reach 160 resin. </h5>}
             </>
         )  
     }
@@ -87,6 +91,7 @@ class BlocInitialOutput extends Component {
         let realTimehours;
         let realTimeminutes;
         let realTimedays;
+
 
         realTimeDate = new Date();             // Prend la date (heure / minute) actuelle
 
@@ -121,10 +126,19 @@ class BlocInitialOutput extends Component {
 
     console.log(`getfullreloadtime : expr = ${expr}` )
 
+    const {preferences} = this.context
 
 
-    return (<h5>Votre résine sera rechargée {realTimedays === 1 && <span> demain </span>}
-        à {expr}.</h5>);
+    return (
+
+        <>
+
+    {preferences === "Français" ?  <h5>Votre résine sera rechargée {realTimedays === 1 && <span> demain </span>} à {expr}.</h5> :
+    <h5> Your resin will be fully reloaded {realTimedays === 1 && <span> tomorrow </span>} at {expr}.</h5> }
+
+    </>
+
+)
 
 
    

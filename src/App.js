@@ -1,7 +1,7 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { ContextProvider } from './component/essaiscontext/Context'
-import { Header, Main } from './component/index'
+// import { ContextProvider } from './component/essaiscontext/Context'
+import { Header, Main, Footer, UserPreferencesProvider } from './component/index'
 import { BrowserRouter as Router } from "react-router-dom";
 
 
@@ -13,12 +13,13 @@ function App() {
 
 
     <div className="App">
-      <ContextProvider>
+      <UserPreferencesProvider>
         <Router>
           <Header />
           <Main />
+          <Footer />
         </Router>
-      </ContextProvider>
+      </UserPreferencesProvider>
     </div>
 
 
