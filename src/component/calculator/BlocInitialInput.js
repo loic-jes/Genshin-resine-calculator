@@ -8,6 +8,7 @@ class BlocInitialInput extends Component {
     constructor(props){
         super(props);
         this.handleChange = this.handleChange.bind(this);
+        this.state = {intervalHandler:""}
 
     }
 
@@ -27,6 +28,28 @@ class BlocInitialInput extends Component {
             }
             
         }
+
+
+        //TODO : Si l'utilisateur change x fois l'input, x timers sont lancés et le décompte va x fois trop vite
+        clearInterval(this.state.intervalHandler);
+
+         let billy = setInterval(()=> {
+
+          this.setState({intervalHandler: billy})
+
+
+            if (e.target.value >= 160) {
+                console.log("Full résine !");
+                clearInterval(billy);
+                clearInterval(this.state.intervalHandler);
+            } else {    
+              this.props.onValueChange(Number(e.target.value)+1);
+            }
+    
+            console.log(this.props.value);
+         
+    
+        }, 480)
     }
 
     
