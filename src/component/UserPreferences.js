@@ -21,10 +21,6 @@ class UserPreferencesProvider extends Component {
         const preferences = this.state.langue;
         const {setLangage} = this;
 
-        console.log("context preferences : " + preferences)
-        console.log("context state test : " + this.state.test)
-        console.log("context state langue : " + this.state.langue)
-
         return (
             <UserPreferences.Provider value={{preferences, setLangage}}>
             {children}
