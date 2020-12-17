@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {BlocInitial} from "../index"
+import {BlocInitial, BlocMiseAJour} from "../index"
 
 // Représente la page entière
 
@@ -90,6 +90,7 @@ class ResinCalculator extends Component {
         return (
             <main>
                 <BlocInitial value = {blockInitialValue} onValueChange={this.handleInputChange} />
+                <BlocMiseAJour/>
             </main>
         );
     }
