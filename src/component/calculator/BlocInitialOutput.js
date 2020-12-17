@@ -24,6 +24,8 @@ class BlocInitialOutput extends Component {
         this.essaiMiteux2 = this.essaiMiteux2.bind(this);
         this.renderPartUn = this.renderPartUn.bind(this);
         this.getFullReloadRealTime = this.getFullReloadRealTime.bind(this);
+        this.getPartialReloadRealTime = this.getPartialReloadRealTime.bind(this);
+        this.calculBreakPoints = this.calculBreakPoints.bind(this)
         
     }
     
@@ -52,6 +54,8 @@ class BlocInitialOutput extends Component {
         // this.renderPartDeux(amountOfHours,amountOfTime);
         const partDeux = this.getFullReloadRealTime(amountOfHours,amountOfTime);
 
+        const partTrois = this.calculBreakPoints(this.props.value)
+
 
 
 
@@ -60,6 +64,7 @@ class BlocInitialOutput extends Component {
 
             {partUn}
             {partDeux}
+            {partTrois}
             
             </div>
         )
@@ -85,7 +90,7 @@ class BlocInitialOutput extends Component {
 
 
 
-     getFullReloadRealTime(hours=0, minutes=0) {
+     getFullReloadRealTime(hours=0, minutes=0, daBoolForNotFullExpr=false) {
 
         let realTimeDate;
         let realTimehours;
@@ -129,6 +134,11 @@ class BlocInitialOutput extends Component {
     const {preferences} = this.context
 
 
+    if (daBoolForNotFullExpr) {
+        return (<>{expr}</>)
+    }
+
+
     return (
 
         <>
@@ -139,12 +149,55 @@ class BlocInitialOutput extends Component {
     </>
 
 )
+}
 
 
+calculBreakPoints(actualResin) {
+
+    let bp20=20;
+    let bp40=40;
+    let bp60=60;
+
+    const {preferences} = this.context
+
+    
+
+
+
+    return (
+
+        <>
+        <p>{preferences === "Français" ? <span>Prochain donjon / fleur (20 résine) : </span> : <span> Next dungeon / leyline (20 resin) : </span>}{actualResin >= 20 ? <span><b>{preferences === "Français" ? <>Dispo</> : <>Available</>}</b></span> : <span><b>{this.getPartialReloadRealTime(actualResin, bp20)} </b></span>} {preferences != "Français" ? <>(GMT+01:00)</> : null}</p>
+        <p>{preferences === "Français" ? <span>Prochain élite d'ascension (40 résine) : </span> : <span> Next outdoor boss (40 resin) : </span>}{actualResin >= 40 ? <span><b>{preferences === "Français" ? <>Dispo</> : <>Available</>}</b></span> : <span><b>{this.getPartialReloadRealTime(actualResin, bp40)} </b></span>} {preferences != "Français" ? <>(GMT+01:00)</> : null}</p>
+        <p>{preferences === "Français" ? <span>Prochain weekly boss (60 résine) : </span> : <span> Next weekly boss (60 resin) : </span>}{actualResin >= 60 ? <span><b>{preferences === "Français" ? <>Dispo</> : <>Available</>}</b></span> : <span><b>{this.getPartialReloadRealTime(actualResin, bp60)}</b></span>} {preferences != "Français" ? <>(GMT+01:00)</> : null}</p>
    
+        </>
+    );
 
 
 }
+
+ getPartialReloadRealTime(resin, breakpoint) {
+
+    let amountNeededForBP = breakpoint - resin;
+    let amountMinuteNeededTimeCalcualtion = amountNeededForBP *8;
+    let amountHourNeededTimeCalcualtion = 0;
+
+    while (amountMinuteNeededTimeCalcualtion >= 60) {
+
+        amountMinuteNeededTimeCalcualtion -= 60;
+        amountHourNeededTimeCalcualtion++
+    }
+
+    let daBoolForNotFullExpr = true;
+
+    return (this.getFullReloadRealTime(amountHourNeededTimeCalcualtion,amountMinuteNeededTimeCalcualtion,daBoolForNotFullExpr));
+    
+}
+
+
+
+
     essaiMiteux() {
  
         console.log("trololo")
