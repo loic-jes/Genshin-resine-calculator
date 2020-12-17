@@ -7,34 +7,34 @@ class ResinContextProvider extends React.Component {
 
     constructor(props) {
         super(props);
-        
+
 
         this.state = {
             resin: {
-                value : "Trololo",
-                resinNeeded: 0, 
-                actualResin : 120,
-                amountOfTime : 0,
-                amountOfHours : 0,
-                realTimeDate : 0,
-                realTimehours : 0,
-                realTimeminutes : 0,
+                value: "Trololo",
+                resinNeeded: 0,
+                actualResin: 120,
+                amountOfTime: 0,
+                amountOfHours: 0,
+                realTimeDate: 0,
+                realTimehours: 0,
+                realTimeminutes: 0,
                 realTimedays: 0,
-                blockInitialValue : 0
+                blockInitialValue: 0
             },
         }
 
         this.setResin = this.setResin.bind(this)
     }
-    
 
-    setResin(name, value){
 
-        let resinChange = {...this.state.resin};
+    setResin(name, value) {
+
+        let resinChange = { ...this.state.resin };
         resinChange[name] = value;
         console.log(resinChange)
 
-        this.setState({resin:resinChange})
+        this.setState({ resin: resinChange })
         console.log(this.state.resin);
 
     }

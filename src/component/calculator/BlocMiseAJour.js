@@ -10,6 +10,15 @@ class BlocMiseAJour extends Component {
 
         let cards = [
             {
+                date: "17/12/2020",
+                title: "Pfiouu",
+                text1: "Migration enfin réussie du projet sous la nouvelle technologie : React.js",
+                text2: "Ajout : ",
+                text3: "- un convertisseur rapide ",
+                text4: "- un pied de page",
+                text5: "- d'une version anglophone",
+                text6: "- de tout plein de dynamisme des résultats", 
+                text7: "- du système qui permettra de changer de page plus tard :D"
 
             },
             {
@@ -41,7 +50,8 @@ class BlocMiseAJour extends Component {
                 title: "Une photo de Meren",
                 src: "https://cdn.discordapp.com/attachments/586261737439887461/788866481793925140/unknown.png",
                 text1: "La découverte du Brachydios",
-                text9: "En vrai c'était juste un essai pour faire une carte standardisée"
+                text9: "En vrai c'était juste un essai pour faire une news standardisée.",
+                text10: "'Ca marche bien !'"
             },
         ]
 
@@ -50,37 +60,37 @@ class BlocMiseAJour extends Component {
         return (
 
             <>
-            <div className="d-flex">
-                <div className="col-3">
-                    <BlocMiseAJourCard data={cards[0]} />
-                </div>
-                <div className="col-3">
-                    <BlocMiseAJourCard data={cards[1]} />
-                </div>
-                <div className="col-3">
-                    <BlocMiseAJourCard data={cards[2]} />
-                </div>
-                <div className="col-3">
-                    <BlocMiseAJourCard data={cards[3]} />
-                </div>
+                <div className="d-flex">
+                    <div className="col-3">
+                        <BlocMiseAJourCard data={cards[0]} />
+                    </div>
+                    <div className="col-3">
+                        <BlocMiseAJourCard data={cards[1]} />
+                    </div>
+                    <div className="col-3">
+                        <BlocMiseAJourCard data={cards[2]} />
+                    </div>
+                    <div className="col-3">
+                        <BlocMiseAJourCard data={cards[3]} />
+                    </div>
                 </div>
 
 
-                <br/>
+                <br />
                 <div className="d-flex">
 
-                <div className="col-3">
-                    <BlocMiseAJourCard data={cards[4]} />
-                </div>
-                <div className="col-3">
-                    <BlocMiseAJourCard data={cards[5]} />
-                </div>
+                    <div className="col-3">
+                        <BlocMiseAJourCard data={cards[4]} />
+                    </div>
+                    <div className="col-3">
+                        <BlocMiseAJourCard data={cards[5]} />
+                    </div>
                 </div>
 
-                </>
+            </>
 
 
-            
+
         );
     }
 }

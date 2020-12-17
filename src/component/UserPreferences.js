@@ -6,31 +6,31 @@ class UserPreferencesProvider extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {langue : String("Français"), test:2}
+        this.state = { langue: String("Français"), test: 2 }
 
         this.setLangage = this.setLangage.bind(this)
     }
 
-    setLangage(input) {        
-        this.setState({langue:input})
+    setLangage(input) {
+        this.setState({ langue: input })
     }
 
     render() {
 
-        const {children} = this.props;
+        const { children } = this.props;
         const preferences = this.state.langue;
-        const {setLangage} = this;
+        const { setLangage } = this;
 
         return (
-            <UserPreferences.Provider value={{preferences, setLangage}}>
-            {children}
+            <UserPreferences.Provider value={{ preferences, setLangage }}>
+                {children}
             </UserPreferences.Provider>
         );
     }
 }
 
-export {UserPreferences};
-export {UserPreferencesProvider};
+export { UserPreferences };
+export { UserPreferencesProvider };
 
 
 // Pour utiliser mon context ------------------------

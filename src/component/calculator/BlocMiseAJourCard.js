@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
 
 class BlocMiseAJourCard extends Component {
-    constructor(props) {
-        super(props);
-    }
-
 
     render() {
-        console.log("Card state : " + this.props.data.title)
         return (
             <div className="card bg-light mb-3" style={{ maxWidth: "18rem" }}>
                 <div className="card-header"><b>{this.props.data.title}</b></div>

@@ -12,38 +12,38 @@ class TestDuContext extends React.Component {
         return (
             <div>
                 <p>Value = {resin.value}</p>
-                <button onClick= {() => {
+                <button onClick={() => {
                     setResin("value", "Value 2")
                 }}> Passer la valeur à : Value 2 </button>
-                <button onClick= {() => {
+                <button onClick={() => {
                     setResin("value", "Bouton trololo")
 
                 }}> Passer la valeur à : Bouton trololo </button>
 
-                <br/>
+                <br />
 
-                <button onClick= {() => {
+                <button onClick={() => {
                     setResin("resinNeeded", 12)
 
                 }}> Passer la Resin Needed à : 12 </button>
-                <button onClick= {() => {
+                <button onClick={() => {
                     setResin("resinNeeded", 40)
 
                 }}> Passer la Resin Needed à : 40 </button>
 
-                <br/>
+                <br />
 
-                <button onClick= {() => {setResin("actualResin",0)}}> Passer la Actual Resin à : 0 </button>
+                <button onClick={() => { setResin("actualResin", 0) }}> Passer la Actual Resin à : 0 </button>
 
-                <button onClick= {() => {setResin("amountOfTime","3 jours")}}> Passer le amountOfTime à : 3 jours </button>
-                <button onClick= {() => {setResin("amountOfHours", 12)}}> Passer le amountOfHours à : 12 </button>
-                <br/>
-                <button onClick= {() => {setResin("value", 20)}}> Essai pour faire passer la value a 20</button>
-
-
+                <button onClick={() => { setResin("amountOfTime", "3 jours") }}> Passer le amountOfTime à : 3 jours </button>
+                <button onClick={() => { setResin("amountOfHours", 12) }}> Passer le amountOfHours à : 12 </button>
+                <br />
+                <button onClick={() => { setResin("value", 20) }}> Essai pour faire passer la value a 20</button>
 
 
-                <br/>
+
+
+                <br />
                 <p> Objet Résine via le context</p>
                 <p> Value : {resin.value}</p>
                 <p> Resin Needed : {resin.resinNeeded}</p>
@@ -61,4 +61,4 @@ class TestDuContext extends React.Component {
     }
 }
 
-export {TestDuContext}
+export { TestDuContext }
