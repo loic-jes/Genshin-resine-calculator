@@ -167,9 +167,9 @@ calculBreakPoints(actualResin) {
     return (
 
         <>
-        <p>{preferences === "Français" ? <span>Prochain donjon / fleur (20 résine) : </span> : <span> Next dungeon / leyline (20 resin) : </span>}{actualResin >= 20 ? <span><b>{preferences === "Français" ? <>Dispo</> : <>Available</>}</b></span> : <span><b>{this.getPartialReloadRealTime(actualResin, bp20)} </b></span>} {preferences != "Français" ? <>(GMT+01:00)</> : null}</p>
-        <p>{preferences === "Français" ? <span>Prochain élite d'ascension (40 résine) : </span> : <span> Next outdoor boss (40 resin) : </span>}{actualResin >= 40 ? <span><b>{preferences === "Français" ? <>Dispo</> : <>Available</>}</b></span> : <span><b>{this.getPartialReloadRealTime(actualResin, bp40)} </b></span>} {preferences != "Français" ? <>(GMT+01:00)</> : null}</p>
-        <p>{preferences === "Français" ? <span>Prochain weekly boss (60 résine) : </span> : <span> Next weekly boss (60 resin) : </span>}{actualResin >= 60 ? <span><b>{preferences === "Français" ? <>Dispo</> : <>Available</>}</b></span> : <span><b>{this.getPartialReloadRealTime(actualResin, bp60)}</b></span>} {preferences != "Français" ? <>(GMT+01:00)</> : null}</p>
+        <p>{preferences === "Français" ? <span>Prochain donjon / fleur (20 résine) : </span> : <span> Next dungeon / leyline (20 resin) : </span>}{actualResin >= 20 ? <span><b>{preferences === "Français" ? <>Dispo</> : <>Available</>}</b></span> : <span><b>{this.getPartialReloadRealTime(actualResin, bp20)} </b></span>} {preferences !== "Français" ? <>(GMT+01:00)</> : null}</p>
+        <p>{preferences === "Français" ? <span>Prochain élite d'ascension (40 résine) : </span> : <span> Next outdoor boss (40 resin) : </span>}{actualResin >= 40 ? <span><b>{preferences === "Français" ? <>Dispo</> : <>Available</>}</b></span> : <span><b>{this.getPartialReloadRealTime(actualResin, bp40)} </b></span>} {preferences !== "Français" ? <>(GMT+01:00)</> : null}</p>
+        <p>{preferences === "Français" ? <span>Prochain weekly boss (60 résine) : </span> : <span> Next weekly boss (60 resin) : </span>}{actualResin >= 60 ? <span><b>{preferences === "Français" ? <>Dispo</> : <>Available</>}</b></span> : <span><b>{this.getPartialReloadRealTime(actualResin, bp60)}</b></span>} {preferences !== "Français" ? <>(GMT+01:00)</> : null}</p>
    
         </>
     );

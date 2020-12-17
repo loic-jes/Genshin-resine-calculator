@@ -8,3 +8,5 @@ export * from './Main';
 export * from './Header';
 export * from './Footer';
 export * from './UserPreferences';
+export * from './calculator/BlocMiseAJour';
+export * from './calculator/BlocMiseAJourCard';

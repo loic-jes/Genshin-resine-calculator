@@ -3,8 +3,6 @@ import flagFr from '../img/flagFr.png'
 import flagUk from '../img/flagUk.png'
 import {UserPreferences} from '../component/UserPreferences'
 
-
-
 class Footer extends Component {
 
     constructor(props) {
@@ -28,17 +26,12 @@ class Footer extends Component {
     
 
 
-
-
-
     render() {
-
-        
-
+      
         return (
             <>
-               <img src={flagFr} style={{ height: 20, width:20 }} name="Français" onClick={this.imgClick} ></img>
-               <img src={flagUk} style={{ height: 20, width:20 }} name="English" onClick={this.imgClick} ></img>
+               <img src={flagFr} style={{ height: 20, width:20 }} name="Français" alt="Drapeau français" onClick={this.imgClick} ></img>
+               <img src={flagUk} style={{ height: 20, width:20 }} name="English" alt="English flag" onClick={this.imgClick} ></img>
             </>
         );
     }

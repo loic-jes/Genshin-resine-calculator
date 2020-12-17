@@ -1,7 +1,7 @@
 Faire des breakpoints a 20 (fleurs donjons), 40 (elite) et 60 résines = OK
 Avoir une heure réelle = OK
 
-Proposer au bot de ping quand on aura atteint un cap mentionné (cf breakpoint)
+TODO : Proposer au bot de ping quand on aura atteint un cap mentionné (cf breakpoint)
 
 
 
@@ -14,20 +14,20 @@ Enlever le / = OK
 
 TODO lulz : Quand j'aurais internet, faire un return sur une vidéo youtube "ca fait bcp la non ?" pour le FastConvertor 
 
-TODO : Enlever le gros bloc html et mettre ça en react
-TODO : Apprendre a extraire une valeur d'un composant react
+Enlever le gros bloc html et mettre ça en react : OK
+Apprendre a extraire une valeur d'un composant react : OK
 TODO : Un peu de mise en page
 
-TODO : Les 3 petits blocs de sous boss
+Les 3 petits blocs de sous boss : OK
 
-TODO : Le timer setInterval
+Le timer setInterval : OK
 
 TODO lolz : Créer un component react Card + flip, un générateur d'aléatoire qui va influer sur les props de la card à créer et faire un mini gachaween
 TODO lolz2 : Si j'suis chaud, créer des comptes utilisateurs, lier le site a la base de données, et permettre de roll 1 fois par jour. Enregistrer les cartes ainsi récupérées dans la BDD et dans un espace interne (pourrait devenir un jeu)
 
 TODO : Les cards de maj
 
-TODO : Un mode anglais / fr a faire avec le context (et un context.provider) react et des if pour les return des components
+Un mode anglais / fr a faire avec le context (et un context.provider) react et des if pour les return des components : OK
 
 
 
