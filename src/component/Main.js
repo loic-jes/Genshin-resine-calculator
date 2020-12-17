@@ -20,7 +20,7 @@ const Default = () => (
 
     return (
       <>
-        <Container>
+        <Container fluid>
           <Switch>
             <Route exact path="/" component={ResinCalculator} />
 

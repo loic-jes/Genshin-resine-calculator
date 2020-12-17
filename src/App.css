@@ -49,6 +49,77 @@ main {
   color: white;
 }
 
-footer {
+/* footer {
   color:white;
+} */
+
+
+
+
+
+
+
+
+
+/* Global */
+
+
+.bg-black{
+  background-color: #2f2c2c;
+}
+
+.color-white{
+  color: #ffffff !important;
+}
+
+
+
+::-webkit-scrollbar{
+  width: 15px;
+  background-color: #ffffff;
+}
+
+::-webkit-scrollbar-track{
+  border-radius: 15px;
+  background-color: #dfdddd;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: #2f3030;
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background-color: #1b834b;
+}
+
+
+/* Navbar */
+.navbar-title{
+  padding: 0.25rem 1.5rem;
+  color: #90a499 !important;
+}
+
+
+
+/* Footer */
+.logo-footer{
+  width: 75px;
+  margin-left: 30px;
+}
+
+.navlink-footer:hover{
+  color: #8487b7 !important;
+}
+
+.font-reseaux{
+  font-size: 24px;
+}
+
+.logo-language{
+  width: 36px;
+}
+
+.logo-language:hover{
+  cursor: pointer;
 }
