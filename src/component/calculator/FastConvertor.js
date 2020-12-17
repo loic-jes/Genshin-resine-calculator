@@ -32,7 +32,7 @@ class FastConvertor extends Component {
 
 
         return (
-            <div style={{marginTop : 90}}>
+            <div style={{marginTop : 90, marginRight : 80}}>
                 <FastConvertorInput unit="r" value={resin} onValueChange={this.handleResinChange} />
                 <FastConvertorInput unit="t" value={time} onValueChange={this.handleTimeChange} />
                 <FastConvertorTimeTranslation time={time} />
