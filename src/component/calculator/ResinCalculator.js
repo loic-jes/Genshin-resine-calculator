@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import {BlocInitial, BlocMiseAJour} from "../index"
-import gunnhildr from '../../img/gunnhildr.png'
+import { BlocInitial, BlocMiseAJour } from "../index"
+// import gunnhildr from '../../../public/assets/img/gunnhildr.png'
 import { FastConvertor } from './FastConvertor';
 
 
@@ -10,80 +10,12 @@ class ResinCalculator extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            resinNeeded : 0,
-            actualResin : 0,
-            amountOfTime : 0,
-            amountOfHours : 0,
-            realTimeDate : 0,
-            realTimehours : 0,
-            realTimeminutes : 0,
-            realTimedays: 0,
-            blockInitialValue : "",
-            intervalHandler : 0,
-            unitNames : {
-                r: "Génération de Résine",
-                t: "Temps (en minutes)"
-            }
-        }
-
-        this.resinNeededChange = this.resinNeededChange.bind(this);
-        this.actualResinChange = this.actualResinChange.bind(this);
-        this.amountOfTimeChange = this.amountOfTimeChange.bind(this);
-        this.amountOfHoursChange = this.amountOfHoursChange.bind(this);
-        this.realTimeDateChange = this.realTimeDateChange.bind(this);
-        this.realTimeHoursChange = this.realTimeHoursChange.bind(this);
-        this.realTimeminutesChange = this.realTimeminutesChange.bind(this);
-        this.realTimedaysChange = this.realTimedaysChange.bind(this);
-        this.blockInitialValueChange = this.blockInitialValueChange.bind(this);
+        this.state = { blockInitialValue: "" }
         this.handleInputChange = this.handleInputChange.bind(this)
-
     }
 
-    handleInputChange(value) { // TODO remonter encore d'un cran
-    // this.props.onValueChange(value);
-    console.log("Final change " + value );
-
-    this.setState({blockInitialValue : value})
-    console.log(this.state)
-}
-
-
-
-    resinNeededChange(resinNeed){
-        this.setState({resinNeed});
-    };
-
-    actualResinChange(actualResin){
-        this.setState({actualResin});
-    };
-
-    amountOfTimeChange(amountOfTime){
-        this.setState({amountOfTime});
-    };
-
-    amountOfHoursChange(amountOfHours){
-        this.setState({amountOfHours});
-    };
-
-    realTimeDateChange(realTimeDate){
-        this.setState({realTimeDate});
-    };
-
-    realTimeHoursChange(realTimeHours){
-        this.setState({realTimeHours});
-    };
-
-    realTimeminutesChange(realTimeminutes){
-        this.setState({realTimeminutes});
-    };
-
-    realTimedaysChange(realTimedays){
-        this.setState({realTimedays});
-    };
-
-    blockInitialValueChange(blockInitialValue){
-        this.setState({blockInitialValue})
+    handleInputChange(value) {
+        this.setState({ blockInitialValue: value })
     }
 
     render() {
@@ -93,23 +25,23 @@ class ResinCalculator extends Component {
         return (
             <main>
 
-<div class="row mt-5">
-    <div class="col-9">
-                <BlocInitial value = {blockInitialValue} onValueChange={this.handleInputChange} />
+                <div className="row mt-5">
+                    <div className="col-9">
+                        <BlocInitial value={blockInitialValue} onValueChange={this.handleInputChange} />
+                    </div>
+                    <div className="col-3">
+                        <FastConvertor />
+                    </div>
                 </div>
-                <div class="col-3">
-                <FastConvertor />
-                </div>
-                </div>
 
 
 
 
-                <br/>
-                <img src={gunnhildr} />
-                <br/>
-                <br/>
-                <BlocMiseAJour/>
+                <br />
+                <img src="assets/img/gunnhildr.png" alt="Jean & Barbura" />
+                <br />
+                <br />
+                <BlocMiseAJour />
             </main>
         );
     }

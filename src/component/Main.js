@@ -7,14 +7,14 @@ import { TestDuContext } from './essaiscontext';
 
 
 const Default = () => (
-    <div>
-      {window.location.pathname}
-      
-    </div>
-  );
+  <div>
+    {window.location.pathname}
 
-  
-  class Main extends React.Component {
+  </div>
+);
+
+
+class Main extends React.Component {
 
   render() {
 
@@ -23,11 +23,9 @@ const Default = () => (
         <Container fluid>
           <Switch>
             <Route exact path="/" component={ResinCalculator} />
-
             <Route path="/trololo" component={Default} />
-
             <Route path="/testcontext" component={TestDuContext} />
-          
+
           </Switch>
         </Container>
       </>

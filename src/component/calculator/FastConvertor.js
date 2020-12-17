@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import {FastConvertorInput} from '../index'
 import {UserPreferences} from '../UserPreferences'
@@ -94,17 +93,6 @@ class FastConvertor extends Component {
             </div>
         );
     }
-
-
-
-
-
-
-
-
-
-
-
 }
 
     export {FastConvertor};
