@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import {BlocInitial, BlocMiseAJour} from "../index"
+import gunnhildr from '../../img/gunnhildr.png'
+import { FastConvertor } from './FastConvertor';
+
 
 // Représente la page entière
 
@@ -89,7 +92,23 @@ class ResinCalculator extends Component {
 
         return (
             <main>
+
+<div class="row mt-5">
+    <div class="col-9">
                 <BlocInitial value = {blockInitialValue} onValueChange={this.handleInputChange} />
+                </div>
+                <div class="col-3">
+                <FastConvertor />
+                </div>
+                </div>
+
+
+
+
+                <br/>
+                <img src={gunnhildr} />
+                <br/>
+                <br/>
                 <BlocMiseAJour/>
             </main>
         );
