@@ -6,7 +6,7 @@ class UserPreferencesProvider extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { langue: String("Français"), test: 2 }
+        this.state = { langue: localStorage.getItem("langue")}
 
         this.setLangage = this.setLangage.bind(this)
     }

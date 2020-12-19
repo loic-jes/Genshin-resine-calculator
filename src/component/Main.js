@@ -6,6 +6,7 @@ import { ResinCalculator } from './';
 import { TestDuContext } from './essaiscontext';
 
 
+
 const Default = () => (
   <div>
     {window.location.pathname}
@@ -16,7 +17,11 @@ const Default = () => (
 
 class Main extends React.Component {
 
+
+
   render() {
+
+
 
     return (
       <>

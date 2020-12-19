@@ -16,7 +16,7 @@ TODO lulz : Quand j'aurais internet, faire un return sur une vidéo youtube "ca 
 
 Enlever le gros bloc html et mettre ça en react : OK
 Apprendre a extraire une valeur d'un composant react : OK
-TODO : Un peu de mise en page
+Un peu de mise en page : OK
 
 Les 3 petits blocs de sous boss : OK
 
@@ -31,6 +31,8 @@ Un mode anglais / fr a faire avec le context (et un context.provider) react et d
 
 
 
+TODO : Fix - Ajouter un GMT a l'horaire de base en version anglaise / Le(s) message(s) Alert a mettre en anglais
+TODO : Ajouter un cookie pour que les EN aient direct le site en EN (et inverse en Fr)
 
 
 

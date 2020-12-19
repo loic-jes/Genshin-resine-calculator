@@ -107,7 +107,7 @@ class BlocInitialOutput extends Component {
             <>
 
                 {preferences === "Français" ? <h5>Votre résine sera rechargée {realTimedays === 1 && <span> demain </span>} à {expr}.</h5> :
-                    <h5> Your resin will be fully reloaded {realTimedays === 1 && <span> tomorrow </span>} at {expr}.</h5>}
+                    <h5> Your resin will be fully reloaded {realTimedays === 1 && <span> tomorrow </span>} at {expr}. (GMT+01:00)</h5>}
 
             </>
 

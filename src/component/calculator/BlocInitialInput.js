@@ -18,10 +18,13 @@ class BlocInitialInput extends Component {
      */
     handleChange(e) {
 
+        const { preferences } = this.context
+
+
         if (!isNaN(e.target.value)) {        // Vérifie que l'input est bien un chiffre
 
             if (e.target.value > 160 || e.target.value < 0) {         // Vérifie que l'input est dans les bonnes valeurs
-                alert("Le chiffre doit être compris entre 0 et 160");
+               preferences==="Français" ? alert("Le chiffre doit être compris entre 0 et 160") : alert("Number must be between 0 and 160");
                 this.props.onValueChange("");                          // Remet l'input a "" pour éviter les chaines d'erreurs
             } else {
                 this.props.onValueChange(e.target.value);       // Sinon met à jour la props value
