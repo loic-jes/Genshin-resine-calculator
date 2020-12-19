@@ -19,10 +19,12 @@ class Footer extends Component {
         const { setLangage } = this.context
         if (e.target.name === "Français") {
             setLangage(e.target.name)
+            localStorage.setItem('langue', "Français")
         }
 
         else if (e.target.name === "English") {
             setLangage(e.target.name)
+            localStorage.setItem('langue', "English")
         }
     }
 
