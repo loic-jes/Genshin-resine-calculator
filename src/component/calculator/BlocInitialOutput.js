@@ -119,6 +119,8 @@ class BlocInitialOutput extends Component {
         let bp20 = 20;
         let bp40 = 40;
         let bp60 = 60;
+        let bp80 = 80;
+        let bp120 = 120;
 
         const { preferences } = this.context
 
@@ -128,6 +130,9 @@ class BlocInitialOutput extends Component {
                 <p>{preferences === "Français" ? <span>Prochain donjon / fleur (20 résine) : </span> : <span> Next dungeon / leyline (20 resin) : </span>}{actualResin >= 20 ? <span><b>{preferences === "Français" ? <>Dispo</> : <>Available</>}</b></span> : <span><b>{this.getPartialReloadRealTime(actualResin, bp20)} </b></span>} {preferences !== "Français" ? <>(GMT+01:00)</> : null}</p>
                 <p>{preferences === "Français" ? <span>Prochain élite d'ascension (40 résine) : </span> : <span> Next outdoor boss (40 resin) : </span>}{actualResin >= 40 ? <span><b>{preferences === "Français" ? <>Dispo</> : <>Available</>}</b></span> : <span><b>{this.getPartialReloadRealTime(actualResin, bp40)} </b></span>} {preferences !== "Français" ? <>(GMT+01:00)</> : null}</p>
                 <p>{preferences === "Français" ? <span>Prochain weekly boss (60 résine) : </span> : <span> Next weekly boss (60 resin) : </span>}{actualResin >= 60 ? <span><b>{preferences === "Français" ? <>Dispo</> : <>Available</>}</b></span> : <span><b>{this.getPartialReloadRealTime(actualResin, bp60)}</b></span>} {preferences !== "Français" ? <>(GMT+01:00)</> : null}</p>
+                <br/>
+                <p>{preferences === "Français" ? <span>2 résines condensées (80 résine) : </span> : <span> 2 condensed resin (80 resin) : </span>}{actualResin >= 80 ? <span><b>{preferences === "Français" ? <>Dispo</> : <>Available</>}</b></span> : <span><b>{this.getPartialReloadRealTime(actualResin, bp80)}</b></span>} {preferences !== "Français" ? <>(GMT+01:00)</> : null}</p>
+                <p>{preferences === "Français" ? <span>3 résines condensées (120 résine) : </span> : <span> 3 condensed resin (120 resin) : </span>}{actualResin >= 120 ? <span><b>{preferences === "Français" ? <>Dispo</> : <>Available</>}</b></span> : <span><b>{this.getPartialReloadRealTime(actualResin, bp120)}</b></span>} {preferences !== "Français" ? <>(GMT+01:00)</> : null}</p>
 
             </>
         );
