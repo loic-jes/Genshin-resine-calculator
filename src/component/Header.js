@@ -1,6 +1,7 @@
 import React from 'react'
 import { Navbar, Container, Nav, NavDropdown, Button } from "react-bootstrap";
 import { UserPreferences } from '../component/UserPreferences'
+import { Protected } from ".";
 import { Link } from "react-router-dom";
 
 
@@ -30,6 +31,14 @@ class Header extends React.Component {
             // </div>
             <Navbar bg="black" expand="lg" className="d-flex justify-content-between">
                 <div>
+                <Protected noauth>
+                  <Nav.Link as="div">
+                    <Link to="/Login">Login</Link>
+                  </Nav.Link>
+                  <Nav.Link as="div">
+                    <Link to="/Register">Register</Link>
+                  </Nav.Link>
+                </Protected>
 
                 </div>
                 <p className="color-white">{preferences === "Français" ? <>Plus tard, ici, des liens</> : <>Later, here, some links</>}</p>

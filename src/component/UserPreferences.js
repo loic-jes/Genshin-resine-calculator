@@ -42,10 +42,13 @@ class UserPreferencesProvider extends Component {
 
         const { children } = this.props;
         const preferences = this.state.langue;
+        const userName = this.state.user.name
+        const userToken = this.state.user.token
+        const userRole = this.state.user.role
         const { setLangage, setUser } = this;
 
         return (
-            <UserPreferences.Provider value={{ preferences, setLangage, setUser }}>
+            <UserPreferences.Provider value={{ preferences, userName, userToken, userRole, setLangage, setUser }}>
                 {children}
             </UserPreferences.Provider>
         );
