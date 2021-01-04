@@ -46,3 +46,11 @@ npm install react-icons --save
 
 
 jquery ?
+
+
+
+Les protected route
+Link la BDD
+La loginView
+REST
+Le réel login avec maj des rôles

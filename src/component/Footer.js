@@ -16,7 +16,9 @@ class Footer extends Component {
     static contextType = UserPreferences;
 
     imgClick(e) {
-        const { setLangage } = this.context
+        const { setLangage } = this.context;
+        const { setUser } = this.context;
+
         if (e.target.name === "Français") {
             setLangage(e.target.name)
             localStorage.setItem('langue', "Français")
@@ -25,8 +27,17 @@ class Footer extends Component {
         else if (e.target.name === "English") {
             setLangage(e.target.name)
             localStorage.setItem('langue', "English")
+        } else if (e.target.name === "user1"){ // TODO : A virer (aussi en html)
+            setUser(e.target.name)
+            localStorage.setItem("name", e.target.name)
+        } else if (e.target.name === "user2"){ // TODO : A virer (aussi en html)
+            setUser(e.target.name)
+            localStorage.setItem("name", e.target.name)
+
         }
     }
+
+
 
 
     render() {
@@ -50,6 +61,12 @@ class Footer extends Component {
                             </div>
                             <div className="d-flex align-content-center">
                                 <img className="logo-language" src="assets/img/flagUk.png" name="English" alt="English flag" onClick={this.imgClick} />
+                            </div>
+                            <div className="d-flex align-content-center">
+                                <img className="logo-language" src="assets/img/flagUk.png" name="user1" alt="English flag" onClick={this.imgClick} /> 
+                            </div>
+                            <div className="d-flex align-content-center">
+                                <img className="logo-language" src="assets/img/flagUk.png" name="user2" alt="English flag" onClick={this.imgClick} />
                             </div>
                         </div>
                         <div className="d-flex justify-content-center">
