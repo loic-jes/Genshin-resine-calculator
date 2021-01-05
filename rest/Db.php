@@ -7,7 +7,7 @@ class Db
     {
         if (self::$db === null) {
             // Paramètres de configuration DB
-            $dsn = "mysql:host=localhost;port=3306;dbname=db_stepbystep";  // TODO a mettre sur la vraie DB du brai site
+            $dsn = "mysql:host=localhost;port=3306;dbname=meren.fr";
             $user = "root";
             $pass = "";
 
