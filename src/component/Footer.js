@@ -28,11 +28,23 @@ class Footer extends Component {
             setLangage(e.target.name)
             localStorage.setItem('langue', "English")
         } else if (e.target.name === "user1"){ // TODO : A virer (aussi en html)
-            setUser(e.target.name)
-            localStorage.setItem("name", e.target.name)
+
+            // localStorage.setItem("name", e.target.name)
+            // localStorage.setItem("role", 1)
+            // setUser(e.target.name)
+
+            let user = {name:"user1", role:"1", token : "12"}
+            setUser(user)
+
+
+            console.log(localStorage)
+
         } else if (e.target.name === "user2"){ // TODO : A virer (aussi en html)
-            setUser(e.target.name)
-            localStorage.setItem("name", e.target.name)
+            
+            let user = {name:"user2", role:"2", token : "32"}
+            setUser(user)
+
+            console.log(localStorage)
 
         }
     }

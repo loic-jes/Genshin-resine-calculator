@@ -41,7 +41,13 @@ class Header extends React.Component {
                 </Protected>
 
                 </div>
+
                 <p className="color-white">{preferences === "Français" ? <>Plus tard, ici, des liens</> : <>Later, here, some links</>}</p>
+                <Protected role="1">
+                  <Nav.Link as="div">
+                    <Link to="/Register">My account</Link>
+                  </Nav.Link>
+                </Protected>
                 <Nav className="flex-column text-center">
                         <div className="d-flex justify-content-center">
                             <div style={{ display: "inline", marginRight: 20 }}>

@@ -5,13 +5,24 @@ class Protected extends Component {
   static contextType = UserPreferences;
   render() {
     const { children, role, noauth } = this.props;
-    const { userName } = this.context;
-    const { userRole } = this.context;
+    const { user } = this.context;
 
-    return (
-      ((noauth && !userName) ||
-        (!noauth && userName && (!role || userRole === role))) && <>{children}</>
-    );
+
+    if ((noauth && !user.name) ||(!noauth && user.name && (!role || user.role === role))) {
+
+      return (
+        ((noauth && !user.name) ||
+          (!noauth && user.name && (!role || user.role === role))) && <>{children}</>
+      );
+
+    } else {
+      return null
+    }
+
+    // return (
+    //   ((noauth && !userName) ||
+    //     (!noauth && userName && (!role || userRole === role))) && <>{children}</>
+    // );
   }
 }
 

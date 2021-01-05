@@ -9,11 +9,8 @@ class UserPreferencesProvider extends Component {
         this.state = { 
         
         langue: localStorage.getItem("langue"),
-        user: {
-            name : localStorage.getItem('name'),
-            token : localStorage.getItem('token'),
-            role : localStorage.getItem('role')
-        }
+        user: JSON.parse(localStorage.getItem('user')),
+
     }
 
         this.setLangage = this.setLangage.bind(this)
@@ -24,31 +21,38 @@ class UserPreferencesProvider extends Component {
         this.setState({ langue: input })
     }
 
-    setUser = (user) => {
-        this.setState(() => ({ user }))
+    // setUser = (user) => {
+    //     this.setState(() => ({ user }))
     
-        // console.log("UserContext user : " + user)
+    //     // console.log("UserContext user : " + user)
     
     
-        if (user !== null){
-        localStorage.setItem('name', JSON.stringify(user.name));
-        localStorage.setItem('token', JSON.stringify(user.token));
-        localStorage.setItem('role', JSON.stringify(user.role));
-    } 
+    //     if (user !== null){
+    //     localStorage.setItem('name', JSON.stringify(user.name));
+    //     localStorage.setItem('token', JSON.stringify(user.token));
+    //     localStorage.setItem('role', JSON.stringify(user.role));
+    // } 
         
-    }
+    // }
+
+      // Method to update state
+  setUser = (user) => {
+    this.setState(() => ({ user }))
+    localStorage.setItem('user', JSON.stringify(user));
+    
+  }
 
     render() {
 
+
         const { children } = this.props;
         const preferences = this.state.langue;
-        const userName = this.state.user.name
-        const userToken = this.state.user.token
-        const userRole = this.state.user.role
+        const user = this.state.user;
         const { setLangage, setUser } = this;
 
+
         return (
-            <UserPreferences.Provider value={{ preferences, userName, userToken, userRole, setLangage, setUser }}>
+            <UserPreferences.Provider value={{ preferences, user, setLangage, setUser }}>
                 {children}
             </UserPreferences.Provider>
         );
