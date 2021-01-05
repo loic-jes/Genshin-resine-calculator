@@ -21,6 +21,12 @@ class Header extends React.Component {
         }
     }
 
+    logout() {
+      const { setUser } = this.context
+      setUser(null)
+      localStorage.clear()
+    }
+
     render() {
         const { setLangage, preferences } = this.context;
 
@@ -47,6 +53,10 @@ class Header extends React.Component {
                   <Nav.Link as="div">
                     <Link to="/Register">My account</Link>
                   </Nav.Link>
+                </Protected>
+                <Protected>
+                  {/* <Link to="/Logout">Logout</Link> */}
+                  <Button onClick={this.logout.bind(this)}>Logout</Button>
                 </Protected>
                 <Nav className="flex-column text-center">
                         <div className="d-flex justify-content-center">
