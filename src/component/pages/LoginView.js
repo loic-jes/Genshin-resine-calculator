@@ -10,21 +10,50 @@ class LoginView extends Component {
   render() {
 
     const { setUser } = this.context
+    const {preferences} = this.context
+
+    let french
+    if (preferences === "Français") {
+      french = true
+    } else {
+      french = false
+    }
+
+    console.log("french")
+    console.log(french)
+
 
     return (
       <Formik
         initialValues={{
           login: "",
           password: "",
+          french
         }}
         validationSchema={Yup.object().shape({
+          french: Yup.boolean(),
           login: Yup.string()
-            .email("Saisir une adresse email valide")
-            .required("Saisir un identifiant"),
+          .when("french", {
+            is:false,
+            then: Yup.string().email("Please type a valid email").required("Please type your registered email")
+          })
+          .when("french", {
+            is:true,
+            then: Yup.string().email("Saisir une adresse email valide").required("Saisir un identifiant")
+          }),
+
+
 
           password: Yup.string()
-            .required("Saisir un mot de passe")
-            .min(4, "Le mot de passe doit contenir au moins 4 caractères"),
+          .when("french", {
+            is:false,
+            then: Yup.string().required("Please type your password").min(4, "Password must at least have 4 characters")
+          })
+          .when("french", {
+            is:true,
+            then: Yup.string().required("Saisir un mot de passe").min(4, "Le mot de passe doit contenir au moins 4 caractères")
+          }),
+          
         })}
         onSubmit={(fields) => {//TODO backend authentication JWT + PHP
           const {login, password} = fields;
@@ -56,11 +85,11 @@ class LoginView extends Component {
       >
         {({ errors, isValid, dirty, touched }) => (
           <>
-            <h3 className="text-center mt-3">Authentification</h3>
+            <h3 className="text-center mt-3">{preferences === "Français" ? <>Authentification</> : <>Login</>}</h3>
 
             <Form className="col-6 offset-3">
               <div className="form-group pb-3">
-                <label htmlFor="login">Identifiant</label>
+                <label htmlFor="login">E-mail</label>
                 <Field
                   name="login"
                   type="text"
@@ -77,7 +106,7 @@ class LoginView extends Component {
                 />
               </div>
               <div className="form-group pb-4">
-                <label htmlFor="password">Mot de passe</label>
+                <label htmlFor="password">{preferences === "Français" ? <>Mot de passe</> : <>Password</>}</label>
                 <Field
                   name="password"
                   type="password"
@@ -96,14 +125,14 @@ class LoginView extends Component {
 
               <div className="form-group d-flex justify-content-between">
                 <button type="reset" className="btn btn-secondary">
-                  Effacer
+                {preferences === "Français" ? <>Effacer</> : <>Delete</>}
                 </button>
                 <button
                   type="submit"
                   className="btn btn-primary"
                   disabled={!(dirty && isValid)}
                 >
-                  Valider
+                  {preferences === "Français" ? <>Valider</> : <>Validate</>}
                 </button>
               </div>
             </Form>
