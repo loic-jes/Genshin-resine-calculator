@@ -4,6 +4,8 @@ import { Container } from "react-bootstrap";
 import { Switch, Route } from "react-router-dom";
 import { ResinCalculator } from './';
 import { TestDuContext } from './essaiscontext';
+import { LoginView } from './pages/LoginView'
+import ProtectedRoute from './ProtectedRoute'
 
 
 
@@ -29,6 +31,8 @@ class Main extends React.Component {
           <Switch>
             <Route exact path="/" component={ResinCalculator} />
             <Route path="/trololo" component={Default} />
+            <ProtectedRoute noauth path="/Login" component={LoginView} />
+
             <Route path="/testcontext" component={TestDuContext} />
 
           </Switch>

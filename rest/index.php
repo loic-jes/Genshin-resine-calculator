@@ -1,10 +1,15 @@
 <?php
 
+header('Access-Control-Allow-Origin: *');
+
 include_once $_SERVER['DOCUMENT_ROOT'] . '/Db.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/JWT.php';
+
 
 switch ($_SERVER["REQUEST_METHOD"]) {
     case 'GET':
         $_get = validate_request($_GET);
+
         $table = isset($_get['table']) ? $_get['table'] : null;
         //obligatoire
         if($table == null){
@@ -21,6 +26,14 @@ switch ($_SERVER["REQUEST_METHOD"]) {
         //$_post = validate_request($_POST);
         $_post = json_decode(file_get_contents('php://input'), true);
         $_post = validate_request($_post);
+        $token = isset($_post['token']) ? $_post['token'] : null;
+        if($token == null){
+            echo json_encode(false);
+            break;
+        }
+        else{
+            return JWT::validate($token);
+        }
         $table = isset($_post['table']) ? $_post['table'] : null;
         //obligatoire
         if($table == null){

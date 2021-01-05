@@ -21,20 +21,6 @@ class UserPreferencesProvider extends Component {
         this.setState({ langue: input })
     }
 
-    // setUser = (user) => {
-    //     this.setState(() => ({ user }))
-    
-    //     // console.log("UserContext user : " + user)
-    
-    
-    //     if (user !== null){
-    //     localStorage.setItem('name', JSON.stringify(user.name));
-    //     localStorage.setItem('token', JSON.stringify(user.token));
-    //     localStorage.setItem('role', JSON.stringify(user.role));
-    // } 
-        
-    // }
-
       // Method to update state
   setUser = (user) => {
     this.setState(() => ({ user }))
@@ -47,8 +33,12 @@ class UserPreferencesProvider extends Component {
 
         const { children } = this.props;
         const preferences = this.state.langue;
-        const user = this.state.user;
+        const user = JSON.parse(this.state.user);
         const { setLangage, setUser } = this;
+
+        console.log(user);
+
+
 
 
         return (
