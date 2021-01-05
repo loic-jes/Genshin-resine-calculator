@@ -3,8 +3,8 @@
 header('Access-Control-Allow-Origin: *');
 // header('Content-Type: application/json');
 
-include_once $_SERVER['DOCUMENT_ROOT'] . '/Db.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/JWT.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/rest/Db.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/rest/JWT.php';
 
 if($_SERVER["REQUEST_METHOD"] == 'POST'){
     $_post = json_decode(file_get_contents('php://input'), true);
@@ -21,19 +21,20 @@ if($_SERVER["REQUEST_METHOD"] == 'POST'){
             $time = round(microtime(true));
             $tokenObj = ["email" => $email, "time" => $time, "role" => $role];
             $token = JWT::create($tokenObj);
-            $resp = ["role"=>$role, "email"=>$email, "token"=>$token];
+            $name = $user['name'];
+            $resp = ["name"=>$name, "email"=>$email, "role"=>$role,"token"=>$token ];
             echo json_encode($resp);
         }
         else{
-            echo json_encode(false);
+            echo json_encode("Password baaaad");
         }
     }
     else{
-        echo json_encode(false);
+        echo json_encode("Login not found");
     }
 } 
 else{
-    echo json_encode(false);
+    echo json_encode("Dafuq naniii ?");
 }
 
 function validate_request($request)

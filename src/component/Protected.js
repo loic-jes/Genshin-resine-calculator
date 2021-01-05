@@ -7,12 +7,24 @@ class Protected extends Component {
     const { children, role, noauth } = this.props;
     const { user } = this.context;
 
+    let userName
+    let userRole
 
-    if ((noauth && !user.name) ||(!noauth && user.name && (!role || user.role === role))) {
+    if (user != null) {
+      userName = user.name;
+      userRole = user.role;
+
+    } else {
+      userName = null;
+      userRole = null
+    }
+
+
+    if ((noauth && !userName) ||(!noauth && userName && (!role || userRole === role))) {
 
       return (
-        ((noauth && !user.name) ||
-          (!noauth && user.name && (!role || user.role === role))) && <>{children}</>
+        ((noauth && !userName) ||
+          (!noauth && userName && (!role || userRole === role))) && <>{children}</>
       );
 
     } else {

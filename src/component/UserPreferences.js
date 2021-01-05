@@ -33,8 +33,12 @@ class UserPreferencesProvider extends Component {
 
         const { children } = this.props;
         const preferences = this.state.langue;
-        const user = this.state.user;
+        const user = JSON.parse(this.state.user);
         const { setLangage, setUser } = this;
+
+        console.log(user);
+
+
 
 
         return (
