@@ -62,7 +62,7 @@ class LoginView extends Component {
             (response) => {
               return response.text().then((resp) => {
 
-                console.log(resp);
+                console.log(resp); // TODO : Enlever
 
 
                 if (resp) {

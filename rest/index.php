@@ -9,6 +9,17 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/JWT.php';
 switch ($_SERVER["REQUEST_METHOD"]) {
     case 'GET':
         $_get = validate_request($_GET);
+         //token
+         $token = isset($_get['token']) ? $_get['token'] : null;
+         if($token == null){
+             echo json_encode("Pas de token sur index.php");
+             break;
+         }
+         else{
+             echo json_encode(JWT::validate($token));
+             break;
+         }
+         //
 
         $table = isset($_get['table']) ? $_get['table'] : null;
         //obligatoire
@@ -28,11 +39,12 @@ switch ($_SERVER["REQUEST_METHOD"]) {
         $_post = validate_request($_post);
         $token = isset($_post['token']) ? $_post['token'] : null;
         if($token == null){
-            echo json_encode(false);
+            echo json_encode("index php token null");
             break;
         }
         else{
-            return JWT::validate($token);
+            echo json_encode(JWT::validate($token));
+            break;
         }
         $table = isset($_post['table']) ? $_post['table'] : null;
         //obligatoire

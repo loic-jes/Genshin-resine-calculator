@@ -26,15 +26,15 @@ if($_SERVER["REQUEST_METHOD"] == 'POST'){
             echo json_encode($resp);
         }
         else{
-            echo json_encode("Password baaaad");
+            echo json_encode(false);
         }
     }
     else{
-        echo json_encode("Login not found");
+        echo json_encode(false);
     }
 } 
 else{
-    echo json_encode("Dafuq naniii ?");
+    echo json_encode(false);
 }
 
 function validate_request($request)
