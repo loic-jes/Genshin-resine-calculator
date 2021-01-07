@@ -3,7 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import { ContextProvider } from './component/essaiscontext/Context'
 import { Header, Main, Footer, UserPreferencesProvider } from './component/index'
 import { BrowserRouter as Router } from "react-router-dom";
-import {UserPreferences} from '../src/component/UserPreferences'
 
 
 

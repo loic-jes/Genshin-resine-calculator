@@ -19,9 +19,6 @@ class LoginView extends Component {
       french = false
     }
 
-    console.log("french")
-    console.log(french)
-
 
     return (
       <Formik
@@ -62,7 +59,7 @@ class LoginView extends Component {
             (response) => {
               return response.text().then((resp) => {
 
-                console.log(resp);
+                console.log(resp); // TODO : Enlever
 
 
                 if (resp) {

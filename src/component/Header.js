@@ -28,7 +28,7 @@ class Header extends React.Component {
     }
 
     render() {
-        const { setLangage, preferences } = this.context;
+        const { preferences } = this.context;
 
         return (
             // <div>

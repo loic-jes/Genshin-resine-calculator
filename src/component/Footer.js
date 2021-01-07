@@ -17,7 +17,7 @@ class Footer extends Component {
 
     imgClick(e) {
         const { setLangage } = this.context;
-        const { setUser } = this.context;
+        // const { setUser } = this.context;
 
         if (e.target.name === "Français") {
             setLangage(e.target.name)
@@ -27,26 +27,28 @@ class Footer extends Component {
         else if (e.target.name === "English") {
             setLangage(e.target.name)
             localStorage.setItem('langue', "English")
-        } else if (e.target.name === "user1"){ // TODO : A virer (aussi en html)
+        } 
+        
+        // else if (e.target.name === "user1"){ // TODO : A virer (aussi en html)
 
-            // localStorage.setItem("name", e.target.name)
-            // localStorage.setItem("role", 1)
-            // setUser(e.target.name)
+        //     // localStorage.setItem("name", e.target.name)
+        //     // localStorage.setItem("role", 1)
+        //     // setUser(e.target.name)
 
-            let user = {name:"user1", role:"1", token : "12"}
-            setUser(user)
+        //     let user = {name:"user1", role:"1", token : "12"}
+        //     setUser(user)
 
 
-            console.log(localStorage)
+        //     console.log(localStorage)
 
-        } else if (e.target.name === "user2"){ // TODO : A virer (aussi en html)
+        // } else if (e.target.name === "user2"){ // TODO : A virer (aussi en html)
             
-            let user = {name:"user2", role:"2", token : "32"}
-            setUser(user)
+        //     let user = {name:"user2", role:"2", token : "32"}
+        //     setUser(user)
 
-            console.log(localStorage)
+        //     console.log(localStorage)
 
-        }
+        // }
     }
 
 
@@ -74,12 +76,12 @@ class Footer extends Component {
                             <div className="d-flex align-content-center">
                                 <img className="logo-language" src="assets/img/flagUk.png" name="English" alt="English flag" onClick={this.imgClick} />
                             </div>
-                            <div className="d-flex align-content-center">
+                            {/* <div className="d-flex align-content-center">
                                 <img className="logo-language" src="assets/img/flagUk.png" name="user1" alt="English flag" onClick={this.imgClick} /> 
                             </div>
                             <div className="d-flex align-content-center">
                                 <img className="logo-language" src="assets/img/flagUk.png" name="user2" alt="English flag" onClick={this.imgClick} />
-                            </div>
+                            </div> */}
                         </div>
                         <div className="d-flex justify-content-center">
                         </div>

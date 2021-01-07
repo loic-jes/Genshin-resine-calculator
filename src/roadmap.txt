@@ -54,3 +54,16 @@ Link la BDD
 La loginView
 REST
 Le réel login avec maj des rôles
+
+
+
+Pour les paths écrits à la main :
+bedulaurent  14 h 03
+Dans fichier .htaccess tu copies le code ci dessous :
+    Options -MultiViews
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.html [QSA,L]
+Et tu mets ce fichier .htaccess à la racine de ton site (en ligne)
+
+Donc : créer un fichier text que j'appelle directement ".htacess", copier coller ça, et mettre à la racine du site avec le index.html
