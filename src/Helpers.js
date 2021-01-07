@@ -1,16 +1,14 @@
 export const ApiRequest = (params, method = "GET") => {
   
-    let url = "http://api.loc:8081//rest/index.php";
+    let url = "http://merenfrtest:8081/rest/index.php";
     const options = { method };
     const user = JSON.parse(JSON.parse(localStorage.getItem("user")));
     if (user) {
-      console.log(user)
-      console.log(user.token)
+ 
         if(!params){
             params = {}
         }
         params.token = user.token;
-        console.log(params)
     }
     if (params) {
       if (method === "GET") {

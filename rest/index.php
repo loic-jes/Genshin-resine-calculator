@@ -2,8 +2,9 @@
 
 header('Access-Control-Allow-Origin: *');
 
-include_once $_SERVER['DOCUMENT_ROOT'] . '/Db.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/JWT.php';
+
+include_once $_SERVER['DOCUMENT_ROOT'] . '/rest/Db.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/rest/JWT.php';
 
 
 switch ($_SERVER["REQUEST_METHOD"]) {

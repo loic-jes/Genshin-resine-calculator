@@ -17,7 +17,7 @@ class Footer extends Component {
 
     imgClick(e) {
         const { setLangage } = this.context;
-        const { setUser } = this.context;
+        // const { setUser } = this.context;
 
         if (e.target.name === "Français") {
             setLangage(e.target.name)

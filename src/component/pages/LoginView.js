@@ -19,9 +19,6 @@ class LoginView extends Component {
       french = false
     }
 
-    console.log("french")
-    console.log(french)
-
 
     return (
       <Formik
