@@ -17,8 +17,8 @@ switch ($_SERVER["REQUEST_METHOD"]) {
              break;
          }
          else{
-             echo json_encode(JWT::validate($token));
-             break;
+            //  echo json_encode(JWT::validate($token));
+            //  break;
          }
          //
 
@@ -39,14 +39,14 @@ switch ($_SERVER["REQUEST_METHOD"]) {
         $_post = json_decode(file_get_contents('php://input'), true);
         $_post = validate_request($_post);
         $token = isset($_post['token']) ? $_post['token'] : null;
-        if($token == null){
-            echo json_encode("index php token null");
-            break;
-        }
-        else{
-            echo json_encode(JWT::validate($token));
-            break;
-        }
+        // if($token == null){
+        //     echo json_encode("index php token null");
+        //     break;
+        // }
+        // else{
+        //     echo json_encode(JWT::validate($token));
+        //     break;
+        // }
         $table = isset($_post['table']) ? $_post['table'] : null;
         //obligatoire
         if($table == null){
@@ -54,7 +54,23 @@ switch ($_SERVER["REQUEST_METHOD"]) {
             break;
         }
         $fields = isset($_post['fields']) ? $_post['fields'] : null;
-        //echo json_encode($_post);
+
+        if ($table == "user") {
+            $fields["password"] = password_hash(
+                $fields["password"],
+                PASSWORD_ARGON2ID,
+                [
+                    'memory_cost' => 1024,
+                    'time_cost' => 2,
+                    'threads' => 2
+                ]);;
+                $prefix = '$argon2id$v=19$m=1024,t=2,p=2$';
+                $fields["password"] = str_replace($prefix,"",$fields["password"]);
+            // echo json_encode($fields["password"]);
+            // break;
+        }
+        // echo json_encode($_post);
+        // echo json_encode($fields);
         echo json_encode(Db::insert($table, $fields));
         break;
     case 'PUT':
