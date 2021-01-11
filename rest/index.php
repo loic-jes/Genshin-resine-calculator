@@ -17,8 +17,8 @@ switch ($_SERVER["REQUEST_METHOD"]) {
              break;
          }
          else{
-             echo json_encode(JWT::validate($token));
-             break;
+            //  echo json_encode(JWT::validate($token));
+            //  break;
          }
          //
 

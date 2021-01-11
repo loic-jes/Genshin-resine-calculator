@@ -8,6 +8,16 @@ import {ApiRequest} from "../../Helpers"
 
 class RegisterView extends Component {
   render() {
+
+    const {preferences} = this.context
+
+    let french
+    if (preferences === "Français") {
+      french = true
+    } else {
+      french = false
+    }
+
     return (
       <Formik
         initialValues={{
@@ -15,16 +25,30 @@ class RegisterView extends Component {
           email: "",
           password: "",
           confirmPassword: "",
+          french
         }}
         validationSchema={Yup.object().shape({
+          french: Yup.boolean(),
           name: Yup.string().required("Saisissez votre nom"),
           email: Yup.string()
+          
+
+
             .email("Saisissez une adresse email valide")
             .required("Saisissez votre adresse mail"),
+
+
           password: Yup.string()
+
+          
             .min(4, "Le mot de passe doit contenir au moins 4 caractères")
             .required("Saisissez un mot de passe"),
+
+
+
           confirmPassword: Yup.string()
+
+
             .oneOf(
               [Yup.ref("password"), null],
               "Les mots de passes ne sont pas identiques"
@@ -34,15 +58,18 @@ class RegisterView extends Component {
         onSubmit={(fields) => {
 
 
+          delete fields.confirmPassword;
 
-          const {name, email, password, confirmPassword} = fields;
+          const {name, email, password} = fields;
           console.log(fields);
 
 
           ApiRequest({table:"user", fields:{name:name, login:email, password:password}}, "POST").then((response)=>{
             return response.text().then((text) => {
                 if (text) {
-                    console.log(text)
+                    console.log(text) // TODO : Nous faire sortir de la page
+                    window.location.href = "Login"
+
                 }
             });
         })

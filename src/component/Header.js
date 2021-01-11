@@ -51,7 +51,7 @@ class Header extends React.Component {
                 <p className="color-white">{preferences === "Français" ? <>Plus tard, ici, des liens</> : <>Later, here, some links</>}</p>
                 <Protected role="1">
                   <Nav.Link as="div">
-                    <Link to="/Register">My account</Link>
+                    <Link to="/myaccount">My account</Link>
                   </Nav.Link>
                 </Protected>
                 <Protected>

@@ -7,6 +7,7 @@ import { TestDuContext } from './essaiscontext';
 import { HomeView } from './pages/HomeView';
 import { LoginView } from './pages/LoginView'
 import { RegisterView } from './pages/RegisterView'
+import { AccountView } from './pages/AccountView'
 import ProtectedRoute from './ProtectedRoute'
 
 
@@ -34,6 +35,7 @@ class Main extends React.Component {
             <Route exact path="/" component={ResinCalculator} />
             <Route path="/trololo" component={Default} />
             <Route path="/home" component={HomeView} />
+            <Route path="/myaccount" component={AccountView} />
             <ProtectedRoute noauth path="/Login" component={LoginView} />
             <ProtectedRoute noauth path="/Register" component={RegisterView} />
 
