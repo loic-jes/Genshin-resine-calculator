@@ -35,7 +35,7 @@ class Main extends React.Component {
             <Route exact path="/" component={ResinCalculator} />
             <Route path="/trololo" component={Default} />
             <Route path="/home" component={HomeView} />
-            <Route path="/myaccount" component={AccountView} />
+            <ProtectedRoute role="1" path="/myaccount" component={AccountView} />
             <ProtectedRoute noauth path="/Login" component={LoginView} />
             <ProtectedRoute noauth path="/Register" component={RegisterView} />
 

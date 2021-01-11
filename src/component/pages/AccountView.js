@@ -56,11 +56,14 @@ class AccountView extends React.Component {
             return (
                 <ul>
 
-                {Object.keys(info).map(info => (
-                        <li key={info.name}>
-                            {info.name} {info.login}
+                {Object.keys(info).map(item => (
+                        <li key={item}>
+                            {item + " : " + info[item]}
+
                         </li>
                     ))}
+
+                    
 
 
 
