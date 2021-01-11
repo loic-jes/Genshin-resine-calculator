@@ -18,6 +18,12 @@ switch ($_SERVER["REQUEST_METHOD"]) {
          }
          else{
             //  echo json_encode(JWT::validate($token));
+             if (JWT::validate($token)===true){
+
+             } else {
+                echo json_encode(JWT::validate($token));
+                 break;
+             }
             //  break;
          }
          //

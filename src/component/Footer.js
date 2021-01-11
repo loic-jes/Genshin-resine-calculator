@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 // import logo_merenween from '../../public/assets/img/logo_merenween.png'
 import { UserPreferences } from '../component/UserPreferences'
 import { Navbar, Nav } from 'react-bootstrap';
+import { Link } from "react-router-dom";
+
 
 
 
@@ -58,8 +60,12 @@ class Footer extends Component {
 
         return (
             <>
-                <div>
-                    <img src="assets/img/logo_merenween.png" alt="Logo" className="logo-footer" />
+                <div> 
+                <Link to="/">
+                <img src="assets/img/logo_merenween.png" alt="Logo" className="logo-footer"/>
+                </Link>
+
+                    
                 </div>
                 <Navbar bg="black" expand="lg" className="d-flex justify-content-between">
                     <div>

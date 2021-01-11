@@ -1,34 +1,31 @@
 import { Component } from "react";
 import {ApiRequest} from "../../Helpers"
+import {UserPreferences} from '../UserPreferences'
+
 
 class HomeView extends Component{
 
+    
     testToken = ()=>{
+
+        const user = JSON.parse(JSON.parse(localStorage.getItem("user")));
+
+
+        
         //send a request to api rest (index.php) et test token validation ...
-        ApiRequest({table:"user"}).then((response)=>{
+        ApiRequest({table:"user", where:"login = '"+user.email+"'"}).then((response)=>{
             return response.text().then((text) => {
                 if (text) {
-                    console.log(text)
+
+                    if (text.includes("false")) {
+                        console.log(text);
+                    } else {
+                        console.log("true");
+                    }
+                    // console.log(text)
                 }
             });
         })
-        // const body = JSON.stringify({token});
-        // fetch("http://api.loc/index.php", { method: "POST", body }).then(
-        //     (response) => {
-        //       return response.text().then((text) => {
-        //         if (text) {
-        //         //   let user = null;
-        //         //   try {
-        //         //     user = JSON.parse(text);
-        //         //   } catch {}
-        //         //   localStorage.setItem("user", JSON.stringify(user));
-        //         //   //setUser(user);
-        //         // } else {
-        //         //   //this.logout();
-        //         }
-        //       });
-        //     }
-        //   );
     }
     
     render(){

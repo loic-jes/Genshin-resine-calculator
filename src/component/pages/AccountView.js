@@ -1,7 +1,6 @@
 import React from 'react'
 import {UserPreferences} from '../UserPreferences'
 import {ApiRequest} from "../../Helpers"
-import { ObjectSchema } from 'yup';
 
 
 
@@ -23,6 +22,7 @@ class AccountView extends React.Component {
         ApiRequest({table:"user", where:"login = '"+user.email+"'"}, "GET").then((response)=>{
             return response.text().then((text) => {
                 if (text) {
+                    console.log(text)
                     let test = JSON.parse(text)[0];
                     delete test.password;
 
