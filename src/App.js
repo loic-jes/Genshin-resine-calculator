@@ -9,12 +9,14 @@ import { BrowserRouter as Router } from "react-router-dom";
 function App() {
 
   
+    
   return (
 
 
     <div className="App">
       <UserPreferencesProvider>
         <Router>
+        <div className = "modalOverlayHandler"></div>
           <Header />
           <Main />
           <Footer />
