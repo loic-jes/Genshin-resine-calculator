@@ -127,13 +127,24 @@ main {
 
 .modalContainer {
   position: absolute;
-  background-color: red;
+  background-color: white;
   border: 2px black solid;
   width: 33.33vw;
   min-height: 20vw;
   z-index: 10000;
   margin-left: 33.33vw;
   margin-top: 25vh;
+  vertical-align: baseline;
+  padding-top: 150px;
+  padding-bottom: 30px;
+  padding-left: 40px;
+  
+}
+
+.modalButton {
+
+  margin-left: 13vw;
+  margin-top: 10vh;
 
 }
 

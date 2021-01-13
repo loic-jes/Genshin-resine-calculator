@@ -110,7 +110,7 @@ class ResinCalculator extends Component {
                     this.setState({expr: expr});
                     this.showModal()
 
-                    this.setState({expr: null});
+                    // this.setState({expr: null});
 
 
                 }
@@ -143,6 +143,7 @@ class ResinCalculator extends Component {
         return (
             <main>
             
+            {/* <button  onClick={e => {this.showModal();}}> show Modal </button> */}
 
             <DcModal onClose={this.showModal} show={this.state.show}>{this.state.expr}</DcModal>
             

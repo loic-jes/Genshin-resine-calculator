@@ -38,7 +38,7 @@ class DcModal extends Component {
                 <div className="modalContainer">
                     <div>{this.props.children}</div>
                     <div>
-                        <button onClick={this.onClose}>Close</button>
+                        <button className="modalButton" onClick={this.onClose}>Close</button>
                     </div>
                 </div>
             </>
