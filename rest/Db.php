@@ -7,9 +7,16 @@ class Db
     {
         if (self::$db === null) {
             // Paramètres de configuration DB
-            $dsn = "mysql:host=localhost;port=3306;dbname=meren.fr";
-            $user = "root";
-            $pass = "";
+            // $dsn = "mysql:host=localhost;port=3306;dbname=meren.fr";
+            // $user = "root";
+            // $pass = "";
+
+
+            $dsn = "mysql:host=merenwh779.mysql.db; dbname=merenwh779";
+            $user = "merenwh779";
+            $pass = "T9b8dM0bg1dS5R5sDg5";
+
+            
 
             try {
                 self::$db = new PDO(

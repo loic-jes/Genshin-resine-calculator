@@ -123,3 +123,40 @@ main {
 .logo-language:hover{
   cursor: pointer;
 }
+
+
+.modalContainer {
+  position: absolute;
+  background-color: white;
+  border: 2px black solid;
+  width: 33.33vw;
+  min-height: 20vw;
+  z-index: 10000;
+  margin-left: 33.33vw;
+  margin-top: 25vh;
+  vertical-align: baseline;
+  padding-top: 150px;
+  padding-bottom: 30px;
+  padding-left: 40px;
+  
+}
+
+.modalButton {
+
+  margin-left: 13vw;
+  margin-top: 10vh;
+
+}
+
+.modalOverlay {
+  position: absolute;
+  width : 100%;
+  height: 100vh;
+  overflow: visible;
+  z-index : 9999;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.bodyFixed {
+  position : fixed;
+}
