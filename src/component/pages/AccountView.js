@@ -73,11 +73,7 @@ class AccountView extends React.Component {
                             {info.name} {info.login}
                         </li>
                     ))} */}
-                    {/* {info.map(info => (
-                        <li key={info.name}>
-                            {info.name} {info.login}
-                        </li>
-                    ))} */}
+
                 </ul>
             );
         }

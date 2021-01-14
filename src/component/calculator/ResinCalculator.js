@@ -84,9 +84,9 @@ class ResinCalculator extends Component {
             let bonusResine = 0
             let bonusResineMax = 160 - localStorage.getItem("résine");
 
-            while (letestTime >= 0.005) {
+            while (letestTime >= 8) {
 
-                letestTime -= 0.005;
+                letestTime -= 8;
                 bonusResine++;
 
             }

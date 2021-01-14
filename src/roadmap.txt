@@ -35,6 +35,13 @@ TODO : Fix - Ajouter un GMT a l'horaire de base en version anglaise / Le(s) mess
 TODO : Ajouter un cookie pour que les EN aient direct le site en EN (et inverse en Fr)
 
 
+TODO : Rendre le modal hors co joli
+TODO : Un page de selecteur /:id 
+
+TODO : Des média queries pour le responsive a un moment (au moins pour les cards)
+
+
+
 
 npm install react-bootstrap bootstrap
 npm install react-router-dom
