@@ -1,6 +1,7 @@
 export const ApiRequest = (params, method = "GET") => {
   
-    let url = "http://merenfrtest:8081/rest/index.php";
+    // let url = "http://merenfrtest:8081/rest/index.php";
+    let url = "rest/index.php";
     const options = { method };
     const user = JSON.parse(JSON.parse(localStorage.getItem("user")));
     if (user) {

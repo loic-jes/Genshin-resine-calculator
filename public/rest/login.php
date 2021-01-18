@@ -2,11 +2,18 @@
 
 
 
-header('Access-Control-Allow-Origin: *');
-// header('Content-Type: application/json');
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json; charset=UTF-8");
+header("Access-Control-Allow-Methods: OPTIONS,GET,POST,PUT,DELETE");
+header("Access-Control-Max-Age: 3600");
+header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+header('Accept: application/json');
 
-include_once $_SERVER['DOCUMENT_ROOT'] . '/rest/Db.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/rest/JWT.php';
+// echo "coucou de login.php";
+
+
+include_once $_SERVER['DOCUMENT_ROOT'] . '/rest//Db.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/rest//JWT.php';
 
 if($_SERVER["REQUEST_METHOD"] == 'POST'){
     $_post = json_decode(file_get_contents('php://input'), true);
