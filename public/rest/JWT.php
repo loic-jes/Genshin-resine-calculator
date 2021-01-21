@@ -1,6 +1,6 @@
 <?php
 
-include_once $_SERVER['DOCUMENT_ROOT'] . '/Db.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/rest/Db.php';
 
 
 class JWT{

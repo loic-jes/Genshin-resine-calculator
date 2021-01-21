@@ -66,6 +66,8 @@ class LoginView extends Component {
                 if (resp) {
                   let user = null
 
+                  console.log("resp", resp)
+
                   try {
                     user = JSON.parse(resp)
 

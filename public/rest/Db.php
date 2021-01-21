@@ -1,4 +1,9 @@
 <?php
+
+include_once $_SERVER['DOCUMENT_ROOT'] . '/rest/config.php'; 
+
+
+
 class Db
 {
 
@@ -7,14 +12,23 @@ class Db
     {
         if (self::$db === null) {
             // Paramètres de configuration DB
+
+
+            // dev
             // $dsn = "mysql:host=localhost;port=3306;dbname=meren.fr";
             // $user = "root";
             // $pass = "";
 
+            // prod
+            // $dsn = "mysql:host=merenwh779.mysql.db; dbname=merenwh779";
+            // $user = "merenwh779";
+            // $pass = "T9b8dM0bg1dS5R5sDg5";
 
-            $dsn = "mysql:host=merenwh779.mysql.db; dbname=merenwh779";
-            $user = "merenwh779";
-            $pass = "T9b8dM0bg1dS5R5sDg5";
+            // adaptatif
+            $infoDB = DB;
+            $dsn = $infoDB["dsn"];
+            $user = $infoDB["user"];
+            $pass = $infoDB["pass"];
 
             
 

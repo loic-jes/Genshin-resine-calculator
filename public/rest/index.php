@@ -11,6 +11,7 @@ header('Accept: application/json');
 
 include_once $_SERVER['DOCUMENT_ROOT'] . '/rest/Db.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/rest/JWT.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/rest/config.php';
 
 
 switch ($_SERVER["REQUEST_METHOD"]) {
