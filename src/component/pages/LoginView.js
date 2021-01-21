@@ -56,6 +56,7 @@ class LoginView extends Component {
           const {login, password} = fields;
           const body = JSON.stringify({ login, password });
           fetch("http://merenfrtest:8081/rest/login.php", { method: "POST", body }).then(
+          // fetch("http://merenween.fr/rest/login.php", { method: "POST", body }).then(
             (response) => {
               return response.text().then((resp) => {
 
@@ -64,6 +65,8 @@ class LoginView extends Component {
 
                 if (resp) {
                   let user = null
+
+                  console.log("resp", resp)
 
                   try {
                     user = JSON.parse(resp)

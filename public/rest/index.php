@@ -1,37 +1,44 @@
 <?php
 
-header('Access-Control-Allow-Origin: *');
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json; charset=UTF-8");
+header("Access-Control-Allow-Methods: OPTIONS,GET,POST,PUT,DELETE");
+header("Access-Control-Max-Age: 3600");
+header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+header('Accept: application/json');
 
+// echo "coucou de l'index.php";
 
 include_once $_SERVER['DOCUMENT_ROOT'] . '/rest/Db.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/rest/JWT.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/rest/config.php';
 
 
 switch ($_SERVER["REQUEST_METHOD"]) {
     case 'GET':
         $_get = validate_request($_GET);
-         //token
-         $token = isset($_get['token']) ? $_get['token'] : null;
-         if($token == null){
-             echo json_encode("Pas de token sur index.php");
-             break;
-         }
-         else{
-            //  echo json_encode(JWT::validate($token));
-             if (JWT::validate($token)===true){
+        //  //token
+        //  $token = isset($_get['token']) ? $_get['token'] : null;
+        //  if($token == null){
+        //      echo json_encode("Pas de token sur index.php");
+        //      break;
+        //  }
+        //  else{
+        //     //  echo json_encode(JWT::validate($token));
+        //      if (JWT::validate($token)===true){
 
-             } else {
-                echo json_encode(JWT::validate($token));
-                 break;
-             }
-            //  break;
-         }
-         //
+        //      } else {
+        //         echo json_encode(JWT::validate($token));
+        //          break;
+        //      }
+        //     //  break;
+        //  }
+        //  //
 
         $table = isset($_get['table']) ? $_get['table'] : null;
         //obligatoire
         if($table == null){
-            echo json_encode(false);
+            echo json_encode("false de l'index.php : table = null");
             break;
         }
         $id = isset($_get['id']) ? $_get['id'] : null;
