@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import {UserPreferences} from '../UserPreferences'
+import { UserPreferences } from '../UserPreferences'
 
 class LoginView extends Component {
 
@@ -10,7 +10,7 @@ class LoginView extends Component {
   render() {
 
     const { setUser } = this.context
-    const {preferences} = this.context
+    const { preferences } = this.context
 
     let french
     if (preferences === "Français") {
@@ -30,33 +30,44 @@ class LoginView extends Component {
         validationSchema={Yup.object().shape({
           french: Yup.boolean(),
           login: Yup.string()
-          .when("french", {
-            is:false,
-            then: Yup.string().email("Please type a valid email").required("Please type your registered email")
-          })
-          .when("french", {
-            is:true,
-            then: Yup.string().email("Saisir une adresse email valide").required("Saisir un identifiant")
-          }),
+            .when("french", {
+              is: false,
+              then: Yup.string().email("Please type a valid email").required("Please type your registered email")
+            })
+            .when("french", {
+              is: true,
+              then: Yup.string().email("Saisir une adresse email valide").required("Saisir un identifiant")
+            }),
 
 
 
           password: Yup.string()
-          .when("french", {
-            is:false,
-            then: Yup.string().required("Please type your password").min(4, "Password must at least have 4 characters")
-          })
-          .when("french", {
-            is:true,
-            then: Yup.string().required("Saisir un mot de passe").min(4, "Le mot de passe doit contenir au moins 4 caractères")
-          }),
-          
+            .when("french", {
+              is: false,
+              then: Yup.string().required("Please type your password").min(4, "Password must at least have 4 characters")
+            })
+            .when("french", {
+              is: true,
+              then: Yup.string().required("Saisir un mot de passe").min(4, "Le mot de passe doit contenir au moins 4 caractères")
+            }),
+
         })}
         onSubmit={(fields) => {//TODO backend authentication JWT + PHP
-          const {login, password} = fields;
+          const { login, password } = fields;
           const body = JSON.stringify({ login, password });
-          fetch("http://merenfrtest:8081/rest/login.php", { method: "POST", body }).then(
-          // fetch("http://merenween.fr/rest/login.php", { method: "POST", body }).then(
+
+          let url = "";
+          if (process.env.NODE_ENV === "development") {
+
+            url = process.env.REACT_APP_API_URL_LOGINJS_DEV
+
+          } else {
+
+            url = process.env.REACT_APP_API_URL_LOGINJS
+          }
+          fetch(url, { method: "POST", body }).then(
+          // fetch("http://merenfrtest:8081/rest/login.php", { method: "POST", body }).then(
+            // fetch("http://merenween.fr/rest/login.php", { method: "POST", body }).then(
             (response) => {
               return response.text().then((resp) => {
 
@@ -71,7 +82,7 @@ class LoginView extends Component {
                   try {
                     user = JSON.parse(resp)
 
-                  } catch {}
+                  } catch { }
                   localStorage.setItem("user", JSON.stringify(user));
                   setUser(resp);
                 } else {
@@ -80,7 +91,7 @@ class LoginView extends Component {
               });
             }
           );
-          
+
         }}
       >
         {({ errors, isValid, dirty, touched }) => (
@@ -125,7 +136,7 @@ class LoginView extends Component {
 
               <div className="form-group d-flex justify-content-between">
                 <button type="reset" className="btn btn-secondary">
-                {preferences === "Français" ? <>Effacer</> : <>Delete</>}
+                  {preferences === "Français" ? <>Effacer</> : <>Delete</>}
                 </button>
                 <button
                   type="submit"
